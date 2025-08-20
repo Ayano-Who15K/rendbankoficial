@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #1a1a2e;
+    --card-color: #1f283d;
+    --accent-color: #0f4c75;
+    --text-color: #e0e0e0;
+    --primary-color: #38b6ff;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+.balance-card {
+    text-align: center;
+}
+
+.balance-card h2 {
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.balance-value {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--success-color);
+    margin-bottom: 15px;
+}
+
+.crypto-list h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.crypto-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.crypto-item:last-child {
+    border-bottom: none;
+}
+
+.crypto-info {
+    display: flex;
+    align-items: center;
+}
+
+.crypto-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.crypto-name h3 {
+    font-size: 1em;
+    margin: 0;
+}
+
+.crypto-name p {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.crypto-value {
+    text-align: right;
+}
+
+.crypto-value .price {
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.crypto-value .change {
+    font-size: 0.8em;
+    margin-top: 5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.change.positive {
+    color: var(--success-color);
+}
+
+.change.negative {
+    color: var(--danger-color);
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transactions-card h2, .actions-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-info span {
+    display: block;
+}
+
+.transaction-info .type {
+    font-weight: 700;
+}
+
+.transaction-info .date {
+    font-size: 0.75em;
+    color: #aaa;
+}
+
+.transaction-amount {
+    font-weight: 700;
+}
+
+.transaction-amount.sent {
+    color: var(--danger-color);
+}
+
+.transaction-amount.received {
+    color: var(--success-color);
+}
+
+.actions-card .action-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.action-button.send {
+    background-color: var(--primary-color);
+}
+
+.action-button.send:hover {
+    background-color: #2a94d0;
+}
+
+.action-button.receive {
+    background-color: var(--success-color);
+}
+
+.action-button.receive:hover {
+    background-color: #24a159;
+}
